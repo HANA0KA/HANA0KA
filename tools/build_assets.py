@@ -322,7 +322,7 @@ def about_panel():
   <text x="{cx + 52:.0f}" y="198" {F} font-size="16" font-weight="700" letter-spacing="3" fill="#f3f4f6">{title}</text>"""
     hl = lambda t, c: f'<tspan fill="{c}" font-weight="700">{t}</tspan>'
     corner = lambda x, y, sx, sy: f'<path d="M{x} {y+sy*16} V{y} H{x+sx*16}" fill="none" stroke="{RED}" stroke-width="2"/>'
-    write("about-panel.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{ph}" viewBox="0 0 {W} {ph}">
+    write("about-panel-v2.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{ph}" viewBox="0 0 {W} {ph}">
   <defs>
     <radialGradient id="glow" cx=".92" cy=".2" r=".7"><stop offset="0" stop-color="{PURPLE}" stop-opacity=".32"/><stop offset="1" stop-color="{PURPLE}" stop-opacity="0"/></radialGradient>
     <radialGradient id="glow2" cx=".05" cy="1" r=".6"><stop offset="0" stop-color="{RED}" stop-opacity=".18"/><stop offset="1" stop-color="{RED}" stop-opacity="0"/></radialGradient>

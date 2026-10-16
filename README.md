@@ -8,7 +8,7 @@
 
 <img src="assets/h-about.svg" width="100%" alt="About me" />
 
-<img src="assets/about-panel.svg" width="100%" alt="I build apps, websites and AI-powered tools, and I also edit video, model in 3D and design. I like to combine both worlds: software that generates and processes creative content. Apps, Web, AI, Design." />
+<img src="assets/about-panel-v2.svg" width="100%" alt="I build apps, websites and AI-powered tools, and I also edit video, model in 3D and design. I like to combine both worlds: software that generates and processes creative content. Apps, Web, AI, Design." />
 
 <img src="assets/h-stack.svg" width="100%" alt="Tech stack" />
 
