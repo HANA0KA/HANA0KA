@@ -200,29 +200,32 @@ SECTIONS = {
 }
 
 
+SEC_ICONS = {
+    "about": f"""<path d="M3 4 H25 M6 8 H22 M9 8 V24 M19 8 V24 M5 14 H23" fill="none" stroke="{RED}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>""",
+    "stack": f"""<path d="M14 3 L26 9 L14 15 L2 9 Z" fill="none" stroke="{LILAC}" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M2 14 L14 20 L26 14" fill="none" stroke="{LILAC}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/>
+      <path d="M2 19 L14 25 L26 19" fill="none" stroke="{RED}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>""",
+    "stats": f"""<rect x="3" y="14" width="5" height="11" rx="1.5" fill="{LILAC}"/><rect x="11.5" y="7" width="5" height="18" rx="1.5" fill="{RED}"/><rect x="20" y="11" width="5" height="14" rx="1.5" fill="{LILAC}"/>""",
+}
+SEC_TITLES = {"about": "ABOUT ME", "stack": "TECH STACK", "stats": "GITHUB STATS"}
+
+
 def section(name):
-    text, icon, bg, tfx = SECTIONS[name]
-    defs, body = title_effect(tfx, text)
-    sl = SEALS[name]
-    seal = pixels(sl, {"#": "#fff"}, 4, W - 48 + (36 - len(sl[0]) * 4) // 2, 9 + 6)
-    write(f"h-{name}.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="54" viewBox="0 0 {W} 54">
+    text, ico = SEC_TITLES[name], SEC_ICONS[name]
+    hh = 48
+    write(f"h-{name}.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{hh}" viewBox="0 0 {W} {hh}">
   <defs>
-    <clipPath id="c"><rect width="{W}" height="54" rx="6"/></clipPath>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0a0a0f"/><stop offset=".7" stop-color="#14141c"/><stop offset="1" stop-color="#2a1540"/></linearGradient>
-    <linearGradient id="u" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{RED}"/><stop offset=".6" stop-color="{PURPLE}"/><stop offset="1" stop-color="{PURPLE}" stop-opacity="0"/></linearGradient>
-    <linearGradient id="sl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{RED}" stop-opacity="0"/><stop offset=".5" stop-color="{EMBER}" stop-opacity=".55"/><stop offset="1" stop-color="{RED}" stop-opacity="0"/></linearGradient>
-    {defs}
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d0d13"/><stop offset="1" stop-color="#1b1230"/></linearGradient>
+    <clipPath id="cp"><rect width="{W}" height="{hh}" rx="10"/></clipPath>
+    <linearGradient id="ln" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{RED}"/><stop offset=".35" stop-color="{PURPLE}"/><stop offset="1" stop-color="{PURPLE}" stop-opacity="0"/></linearGradient>
+    <linearGradient id="sh" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-140 0;{W+20} 0;{W+20} 0" keyTimes="0;.5;1" dur="7s" repeatCount="indefinite"/></linearGradient>
   </defs>
-  <g clip-path="url(#c)">
-    <rect width="{W}" height="54" fill="url(#bg)"/>
-    {bg_effect(bg)}
-    <rect x="0" y="0" width="5" height="54" fill="{RED}"/>
-    <g transform="translate(16 9)">{icon_svg(icon)}</g>
-    {body}
-    <rect x="84" y="46" width="0" height="3" rx="1.5" fill="url(#u)"><animate attributeName="width" values="0;{W-200};{W-200};0" keyTimes="0;.4;.85;1" dur="6s" repeatCount="indefinite"/></rect>
-    <rect x="{W-48}" y="9" width="36" height="36" rx="3" fill="{RED}"><animate attributeName="fill" values="{RED};#b3123a;{RED}" dur="3s" repeatCount="indefinite"/></rect>
-    {seal}
-  </g>
+  <rect width="{W}" height="{hh}" rx="10" fill="url(#bg)"/>
+  <g transform="translate(20 9)">{ico}<animateTransform attributeName="transform" type="translate" values="20 9;20 7;20 9" dur="3.2s" repeatCount="indefinite"/></g>
+  <text x="62" y="30" font-family="'Trebuchet MS','Segoe UI',Verdana,sans-serif" font-size="21" font-weight="700" letter-spacing="5" fill="#f3f4f6">{text}</text>
+  <g clip-path="url(#cp)"><rect x="0" y="{hh-3}" width="{W}" height="3" fill="url(#ln)"/>
+  <rect x="0" y="{hh-3}" width="{W}" height="3" fill="url(#sh)" opacity=".6"/></g>
 </svg>
 """)
 
@@ -290,10 +293,10 @@ ICONS = {
     "AI": f"""<path d="M28 4 C29.5 18 34 22.5 48 24 C34 25.5 29.5 30 28 44 C26.5 30 22 25.5 8 24 C22 22.5 26.5 18 28 4Z" fill="none" stroke="{L}" stroke-width="2.5" stroke-linejoin="round"/>
       <path d="M44 34 C44.7 40 46.5 41.8 52 42.5 C46.5 43.2 44.7 45 44 51 C43.3 45 41.5 43.2 36 42.5 C41.5 41.8 43.3 40 44 34Z" fill="{RED}"/>
       <circle cx="12" cy="44" r="2.6" fill="{G}"/>""",
-    "DESIGN": f"""<path d="M8 46 C14 6 42 6 48 46" fill="none" stroke="{L}" stroke-width="2.8" stroke-linecap="round"/>
-      <line x1="8" y1="46" x2="14" y2="14" stroke="{G}" stroke-width="1.5" stroke-dasharray="2 3"/><line x1="48" y1="46" x2="42" y2="14" stroke="{G}" stroke-width="1.5" stroke-dasharray="2 3"/>
-      <circle cx="14" cy="14" r="3" fill="none" stroke="{RED}" stroke-width="2"/><circle cx="42" cy="14" r="3" fill="none" stroke="{RED}" stroke-width="2"/>
-      <rect x="4.5" y="42.5" width="7" height="7" rx="1.5" fill="{G}"/><rect x="44.5" y="42.5" width="7" height="7" rx="1.5" fill="{G}"/>""",
+    "DESIGN": f"""<path d="M28 3 L43 27 C43 36 36 41 28 53 C20 41 13 36 13 27 Z" fill="none" stroke="{L}" stroke-width="2.6" stroke-linejoin="round"/>
+      <line x1="28" y1="28" x2="28" y2="53" stroke="{L}" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="28" cy="25" r="4" fill="{RED}"/>
+      <path d="M17 31 C22 33 25 33 28 28 C31 33 34 33 39 31" fill="none" stroke="{G}" stroke-width="1.8" stroke-linecap="round"/>""",
 }
 CARDS = [("APPS", "bob"), ("WEB", "tilt"), ("AI", "pulse"), ("DESIGN", "bob")]
 
