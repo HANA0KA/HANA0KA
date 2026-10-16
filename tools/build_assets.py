@@ -302,7 +302,7 @@ CARDS = [("APPS", "bob"), ("WEB", "tilt"), ("AI", "pulse"), ("DESIGN", "bob")]
 
 
 def about_panel():
-    ph = 214
+    ph = 228
     F = "font-family=\"'Trebuchet MS','Segoe UI',Verdana,sans-serif\""
     items = ""
     cw = (W - 80) / 4
@@ -316,32 +316,27 @@ def about_panel():
             anim = f'<animateTransform attributeName="transform" type="scale" values="1;1.06;1" additive="sum" dur="1.8s" begin="{d}s" repeatCount="indefinite"/>'
         else:
             anim = f'<animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="2.4s" begin="{d}s" repeatCount="indefinite"/>'
-        sep = f'<line x1="{cx:.0f}" y1="136" x2="{cx:.0f}" y2="188" stroke="#2f2f3d"/>' if i else ""
         items += f"""
-  {sep}
-  <g transform="translate({cx + 22:.0f} 136)"><g transform="scale(.82)"><g>{g}{anim}</g></g></g>
-  <text x="{cx + 78:.0f}" y="168" {F} font-size="16" font-weight="700" letter-spacing="3" fill="#f3f4f6">{title}</text>
-  <rect x="{cx + 78:.0f}" y="177" width="0" height="2" fill="{RED}"><animate attributeName="width" values="0;26;26;0" keyTimes="0;.25;.85;1" dur="6s" begin="{d}s" repeatCount="indefinite"/></rect>"""
+  <g transform="translate({cx:.0f} 162)"><g transform="scale(.8)"><g>{g}{anim}</g></g></g>
+  <text x="{cx + 52:.0f}" y="178" {F} font-size="12" fill="{RED}" letter-spacing="2">0{i+1}</text>
+  <text x="{cx + 52:.0f}" y="198" {F} font-size="16" font-weight="700" letter-spacing="3" fill="#f3f4f6">{title}</text>"""
     hl = lambda t, c: f'<tspan fill="{c}" font-weight="700">{t}</tspan>'
+    corner = lambda x, y, sx, sy: f'<path d="M{x} {y+sy*16} V{y} H{x+sx*16}" fill="none" stroke="{RED}" stroke-width="2"/>'
     write("about-panel.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{ph}" viewBox="0 0 {W} {ph}">
   <defs>
-    <linearGradient id="pbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d0d13"/><stop offset="1" stop-color="#1b1230"/></linearGradient>
-    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{RED}"/><stop offset="1" stop-color="{PURPLE}"/></linearGradient>
-    <linearGradient id="hl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{RED}"/><stop offset="1" stop-color="{PURPLE}"/></linearGradient>
-    <clipPath id="pc"><rect width="{W}" height="{ph}" rx="12"/></clipPath>
+    <radialGradient id="glow" cx=".92" cy=".2" r=".7"><stop offset="0" stop-color="{PURPLE}" stop-opacity=".32"/><stop offset="1" stop-color="{PURPLE}" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glow2" cx=".05" cy="1" r=".6"><stop offset="0" stop-color="{RED}" stop-opacity=".18"/><stop offset="1" stop-color="{RED}" stop-opacity="0"/></radialGradient>
   </defs>
-  <g clip-path="url(#pc)">
-    <rect width="{W}" height="{ph}" fill="url(#pbg)"/>
-    <rect width="5" height="{ph}" fill="url(#bar)"/>
-    <polygon points="0,0 50,0 25,{ph} -25,{ph}" fill="#fff" opacity=".04"><animateTransform attributeName="transform" type="translate" values="-80 0;{W+100} 0;{W+100} 0" keyTimes="0;.4;1" dur="8s" repeatCount="indefinite"/></polygon>
-  </g>
-  <rect x=".5" y=".5" width="{W-1}" height="{ph-1}" rx="12" fill="none" stroke="#2f2f3d"/>
-  <text x="34" y="62" {F} font-size="64" font-weight="800" fill="{RED}" opacity=".35">&#8220;</text>
-  <text x="74" y="40" {F} font-size="19" fill="#d4d4dc" xml:space="preserve">I build {hl("apps", RED)}, {hl("websites", LILAC)} and {hl("AI-powered tools", RED)},</text>
-  <text x="74" y="66" {F} font-size="19" fill="#d4d4dc" xml:space="preserve">and I also edit video, model in 3D and design.</text>
-  <text x="74" y="98" {F} font-size="14.5" fill="#9ca3af" xml:space="preserve">I like to combine both worlds: software that generates and processes creative content.</text>
-  <rect x="74" y="108" width="0" height="2" rx="1" fill="url(#hl)"><animate attributeName="width" values="0;180;180;0" keyTimes="0;.3;.85;1" dur="6s" repeatCount="indefinite"/></rect>
-  <line x1="40" y1="122" x2="{W-40}" y2="122" stroke="#2f2f3d"/>{items}
+  <rect width="{W}" height="{ph}" fill="#09090e"/>
+  <rect width="{W}" height="{ph}" fill="url(#glow)"/>
+  <rect width="{W}" height="{ph}" fill="url(#glow2)"/>
+  <text x="{W-26}" y="190" text-anchor="end" font-family="'Songti SC','Hiragino Mincho ProN','Noto Serif CJK JP',serif" font-size="170" font-weight="700" fill="#fff" opacity=".045">&#21109;</text>
+  {corner(10, 10, 1, 1)}{corner(W-10, 10, -1, 1)}{corner(10, ph-10, 1, -1)}{corner(W-10, ph-10, -1, -1)}
+  <text x="40" y="34" {F} font-size="11" letter-spacing="5" fill="{LILAC}" opacity=".85">WHAT I DO</text>
+  <text x="40" y="70" {F} font-size="22" fill="#e5e7eb" xml:space="preserve">I build {hl("apps", RED)}, {hl("websites", LILAC)} and {hl("AI-powered tools", RED)},</text>
+  <text x="40" y="98" {F} font-size="22" fill="#e5e7eb" xml:space="preserve">and I also edit video, model in 3D and design.</text>
+  <text x="40" y="126" {F} font-size="14" font-style="italic" fill="#8b8d98" xml:space="preserve">I like to combine both worlds: software that generates and processes creative content.</text>
+  <line x1="40" y1="146" x2="{W-40}" y2="146" stroke="#fff" stroke-opacity=".12" stroke-dasharray="2 5"/>{items}
 </svg>
 """)
 
