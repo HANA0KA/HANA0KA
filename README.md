@@ -8,7 +8,7 @@
 
 <img src="assets/h-about.svg" width="100%" alt="About me" />
 
-<img src="assets/about-panel-v2.svg" width="100%" alt="I build apps, websites and AI-powered tools, and I also edit video, model in 3D and design. I like to combine both worlds: software that generates and processes creative content. Apps, Web, AI, Design." />
+<img src="assets/about-panel-v3.svg" width="100%" alt="I build apps, websites and AI-powered tools, and I also edit video, model in 3D and design. I like to combine both worlds: software that generates and processes creative content. Apps, Web, AI, Design." />
 
 <img src="assets/h-stack.svg" width="100%" alt="Tech stack" />
 
@@ -25,10 +25,10 @@
 
 <div align="center">
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=HANA0KA&show_icons=true&hide_border=true&bg_color=0a0a0f&title_color=e11d48&icon_color=a78bfa&text_color=d4d4dc&ring_color=e11d48&count_private=true" alt="GitHub stats" />
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=HANA0KA&show_icons=true&hide_border=true&bg_color=0a0a0f&title_color=e11d48&icon_color=d4d4dc&text_color=d4d4dc&ring_color=e11d48&count_private=true" alt="GitHub stats" />
 <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HANA0KA&layout=compact&hide_border=true&bg_color=0a0a0f&title_color=e11d48&text_color=d4d4dc" alt="Top languages" />
 
-<img src="https://streak-stats.demolab.com?user=HANA0KA&hide_border=true&background=0a0a0f&ring=e11d48&fire=a78bfa&currStreakLabel=e11d48&sideLabels=d4d4dc&currStreakNum=ffffff&sideNums=ffffff&dates=9ca3af" alt="Contribution streak" />
+<img src="https://streak-stats.demolab.com?user=HANA0KA&hide_border=true&background=0a0a0f&ring=e11d48&fire=d4d4dc&currStreakLabel=e11d48&sideLabels=d4d4dc&currStreakNum=ffffff&sideNums=ffffff&dates=9ca3af" alt="Contribution streak" />
 
 
 </div>

@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="830" height="48" viewBox="0 0 830 48">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d0d13"/><stop offset="1" stop-color="#1b1230"/></linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d0d13"/><stop offset="1" stop-color="#1a181d"/></linearGradient>
     <clipPath id="cp"><rect width="830" height="48" rx="10"/></clipPath>
-    <linearGradient id="ln" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e11d48"/><stop offset=".35" stop-color="#7c3aed"/><stop offset="1" stop-color="#7c3aed" stop-opacity="0"/></linearGradient>
+    <linearGradient id="ln" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e11d48"/><stop offset=".35" stop-color="#6b7280"/><stop offset="1" stop-color="#6b7280" stop-opacity="0"/></linearGradient>
     <linearGradient id="sh" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
       <animateTransform attributeName="gradientTransform" type="translate" values="-140 0;850 0;850 0" keyTimes="0;.5;1" dur="7s" repeatCount="indefinite"/></linearGradient>
   </defs>
   <rect width="830" height="48" rx="10" fill="url(#bg)"/>
-  <g transform="translate(20 9)"><rect x="3" y="14" width="5" height="11" rx="1.5" fill="#a78bfa"/><rect x="11.5" y="7" width="5" height="18" rx="1.5" fill="#e11d48"/><rect x="20" y="11" width="5" height="14" rx="1.5" fill="#a78bfa"/><animateTransform attributeName="transform" type="translate" values="20 9;20 7;20 9" dur="3.2s" repeatCount="indefinite"/></g>
+  <g transform="translate(20 9)"><rect x="3" y="14" width="5" height="11" rx="1.5" fill="#d4d4dc"/><rect x="11.5" y="7" width="5" height="18" rx="1.5" fill="#e11d48"/><rect x="20" y="11" width="5" height="14" rx="1.5" fill="#d4d4dc"/><animateTransform attributeName="transform" type="translate" values="20 9;20 7;20 9" dur="3.2s" repeatCount="indefinite"/></g>
   <text x="62" y="30" font-family="'Trebuchet MS','Segoe UI',Verdana,sans-serif" font-size="21" font-weight="700" letter-spacing="5" fill="#f3f4f6">GITHUB STATS</text>
   <g clip-path="url(#cp)"><rect x="0" y="45" width="830" height="3" fill="url(#ln)"/>
   <rect x="0" y="45" width="830" height="3" fill="url(#sh)" opacity=".6"/></g>

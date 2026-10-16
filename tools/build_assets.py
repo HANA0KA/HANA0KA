@@ -5,7 +5,7 @@ import base64, os, re, subprocess
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "assets")
 W = 830
-RED, EMBER, GRAY, PURPLE, LILAC = "#e11d48", "#ff4d6d", "#9ca3af", "#7c3aed", "#a78bfa"
+RED, EMBER, GRAY, PURPLE, LILAC = "#e11d48", "#ff4d6d", "#9ca3af", "#6b7280", "#d4d4dc"
 PINK, ROSE, GOLD, VIOLET = RED, EMBER, GRAY, PURPLE  # alias de los nombres antiguos
 
 
@@ -213,9 +213,9 @@ SEC_TITLES = {"about": "ABOUT ME", "stack": "TECH STACK", "stats": "GITHUB STATS
 def section(name):
     text, ico = SEC_TITLES[name], SEC_ICONS[name]
     hh = 48
-    write(f"h-{name}.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{hh}" viewBox="0 0 {W} {hh}">
+    write(f"h-{name}-v2.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{hh}" viewBox="0 0 {W} {hh}">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d0d13"/><stop offset="1" stop-color="#1b1230"/></linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d0d13"/><stop offset="1" stop-color="#1a181d"/></linearGradient>
     <clipPath id="cp"><rect width="{W}" height="{hh}" rx="10"/></clipPath>
     <linearGradient id="ln" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{RED}"/><stop offset=".35" stop-color="{PURPLE}"/><stop offset="1" stop-color="{PURPLE}" stop-opacity="0"/></linearGradient>
     <linearGradient id="sh" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
@@ -322,9 +322,9 @@ def about_panel():
   <text x="{cx + 52:.0f}" y="198" {F} font-size="16" font-weight="700" letter-spacing="3" fill="#f3f4f6">{title}</text>"""
     hl = lambda t, c: f'<tspan fill="{c}" font-weight="700">{t}</tspan>'
     corner = lambda x, y, sx, sy: f'<path d="M{x} {y+sy*16} V{y} H{x+sx*16}" fill="none" stroke="{RED}" stroke-width="2"/>'
-    write("about-panel-v2.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{ph}" viewBox="0 0 {W} {ph}">
+    write("about-panel-v3.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{ph}" viewBox="0 0 {W} {ph}">
   <defs>
-    <radialGradient id="glow" cx=".92" cy=".2" r=".7"><stop offset="0" stop-color="{PURPLE}" stop-opacity=".32"/><stop offset="1" stop-color="{PURPLE}" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glow" cx=".92" cy=".2" r=".7"><stop offset="0" stop-color="{PURPLE}" stop-opacity=".22"/><stop offset="1" stop-color="{PURPLE}" stop-opacity="0"/></radialGradient>
     <radialGradient id="glow2" cx=".05" cy="1" r=".6"><stop offset="0" stop-color="{RED}" stop-opacity=".18"/><stop offset="1" stop-color="{RED}" stop-opacity="0"/></radialGradient>
   </defs>
   <rect width="{W}" height="{ph}" fill="#09090e"/>
@@ -425,7 +425,7 @@ def ai_panel():
   </g>"""
     write("ai-panel.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{h}" viewBox="0 0 {W} {h}">
   <defs>
-    <linearGradient id="tb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14141c"/><stop offset="1" stop-color="#241440"/></linearGradient>
+    <linearGradient id="tb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14141c"/><stop offset="1" stop-color="#1f1d24"/></linearGradient>
   </defs>
   <rect width="{W}" height="{h}" rx="10" fill="#0a0a0f"/>
   <rect x=".5" y=".5" width="{W-1}" height="{h-1}" rx="10" fill="none" stroke="#2f2f3d"/>
@@ -499,7 +499,7 @@ def hero_strip():
                   f'<animate attributeName="opacity" values="0;.5;0" dur="{d:.1f}s" begin="{-r()*d:.1f}s" repeatCount="indefinite"/></circle>')
     write("hero-strip.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{h}" viewBox="0 0 {W} {h}">
   <defs>
-    <linearGradient id="hb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#09090d"/><stop offset=".6" stop-color="#12121a"/><stop offset="1" stop-color="#22123a"/></linearGradient>
+    <linearGradient id="hb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#09090d"/><stop offset=".6" stop-color="#12121a"/><stop offset="1" stop-color="#1d1b22"/></linearGradient>
     <linearGradient id="en" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{RED}"/><stop offset="1" stop-color="{PURPLE}"/></linearGradient>
     <pattern id="sg" width="40" height="20" patternUnits="userSpaceOnUse">
       <g fill="none" stroke="#fff" stroke-opacity=".055">
