@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="830" height="24" viewBox="0 0 830 24" fill="none">
-  <polyline points="0,12 70,12 76,12 82,3 90,21 96,12 280,12 286,12 292,3 300,21 306,12 490,12 496,12 502,3 510,21 516,12 700,12 706,12 712,3 720,21 726,12 830,12" stroke="#3f3f46" stroke-width="1.5" stroke-linejoin="round"/>
-  <polyline points="0,12 70,12 76,12 82,3 90,21 96,12 280,12 286,12 292,3 300,21 306,12 490,12 496,12 502,3 510,21 516,12 700,12 706,12 712,3 720,21 726,12 830,12" stroke="#e11d48" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" pathLength="1000" stroke-dasharray="90 910">
-    <animate attributeName="stroke-dashoffset" values="90;-1000" dur="3.2s" repeatCount="indefinite"/>
-  </polyline>
-  <polyline points="0,12 70,12 76,12 82,3 90,21 96,12 280,12 286,12 292,3 300,21 306,12 490,12 496,12 502,3 510,21 516,12 700,12 706,12 712,3 720,21 726,12 830,12" stroke="#7c3aed" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" pathLength="1000" stroke-dasharray="50 950" opacity=".9">
-    <animate attributeName="stroke-dashoffset" values="560;-440" dur="3.2s" repeatCount="indefinite"/>
-  </polyline>
-</svg>

@@ -274,54 +274,57 @@ def divider_blade():
 """)
 
 
-PHONE = ["######", "#....#", "#.RR.#", "#.RR.#", "#....#", "#....#", "#....#", "#.##.#", "######"]
-BROWSER = ["#########", "#R.P....#", "#########", "#.RRRR..#", "#.PPP...#", "#.......#", "#.GGGGG.#", "#########"]
-CHIP = [".#.#.#.#.", "#########", ".#RRRRR#.", "##RPPPR##", ".#RPPPR#.", "##RPPPR##", ".#RRRRR#.", "#########", ".#.#.#.#."]
-CLAP = ["RRWWRRWWR", "#########", "#.......#", "#.P.....#", "#.PP....#", "#.PPP...#", "#.PP....#", "#.P.....#", "#########"]
-CARDS = [
-    ("APPS", "Native macOS & iOS", PHONE, "bob"),
-    ("WEB", "Next.js  Astro  React", BROWSER, "tilt"),
-    ("AI", "Whisper  ElevenLabs  Claude", CHIP, "pulse"),
-    ("CREATIVE", "DaVinci  Blender  Adobe", CLAP, "bob"),
-]
+G, L = "#9ca3af", LILAC
+ICONS = {
+    "APPS": f"""<rect x="16" y="4" width="24" height="48" rx="6" fill="none" stroke="{G}" stroke-width="2.5"/>
+      <line x1="24" y1="10" x2="32" y2="10" stroke="{G}" stroke-width="2.5" stroke-linecap="round"/>
+      <rect x="21" y="18" width="6" height="6" rx="2" fill="{RED}"/><rect x="29" y="18" width="6" height="6" rx="2" fill="{L}"/>
+      <rect x="21" y="27" width="6" height="6" rx="2" fill="{L}"/><rect x="29" y="27" width="6" height="6" rx="2" fill="{G}"/>
+      <line x1="24" y1="46" x2="32" y2="46" stroke="{G}" stroke-width="2.5" stroke-linecap="round"/>""",
+    "WEB": f"""<rect x="3" y="9" width="50" height="38" rx="6" fill="none" stroke="{G}" stroke-width="2.5"/>
+      <line x1="3" y1="20" x2="53" y2="20" stroke="{G}" stroke-width="2.5"/>
+      <circle cx="10" cy="14.5" r="1.8" fill="{RED}"/><circle cx="16" cy="14.5" r="1.8" fill="{L}"/><circle cx="22" cy="14.5" r="1.8" fill="{G}"/>
+      <polyline points="21,28 14,34 21,40" fill="none" stroke="{L}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="35,28 42,34 35,40" fill="none" stroke="{L}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="31" y1="27" x2="25" y2="41" stroke="{RED}" stroke-width="2.8" stroke-linecap="round"/>""",
+    "AI": f"""<path d="M28 4 C29.5 18 34 22.5 48 24 C34 25.5 29.5 30 28 44 C26.5 30 22 25.5 8 24 C22 22.5 26.5 18 28 4Z" fill="none" stroke="{L}" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M44 34 C44.7 40 46.5 41.8 52 42.5 C46.5 43.2 44.7 45 44 51 C43.3 45 41.5 43.2 36 42.5 C41.5 41.8 43.3 40 44 34Z" fill="{RED}"/>
+      <circle cx="12" cy="44" r="2.6" fill="{G}"/>""",
+    "DESIGN": f"""<path d="M8 46 C14 6 42 6 48 46" fill="none" stroke="{L}" stroke-width="2.8" stroke-linecap="round"/>
+      <line x1="8" y1="46" x2="14" y2="14" stroke="{G}" stroke-width="1.5" stroke-dasharray="2 3"/><line x1="48" y1="46" x2="42" y2="14" stroke="{G}" stroke-width="1.5" stroke-dasharray="2 3"/>
+      <circle cx="14" cy="14" r="3" fill="none" stroke="{RED}" stroke-width="2"/><circle cx="42" cy="14" r="3" fill="none" stroke="{RED}" stroke-width="2"/>
+      <rect x="4.5" y="42.5" width="7" height="7" rx="1.5" fill="{G}"/><rect x="44.5" y="42.5" width="7" height="7" rx="1.5" fill="{G}"/>""",
+}
+CARDS = [("APPS", "bob"), ("WEB", "tilt"), ("AI", "pulse"), ("DESIGN", "bob")]
 
 
 def about_cards():
-    cw, gap, ch = 197, 14, 124
-    cols = {"#": "#9ca3af", "R": RED, "P": LILAC, "G": "#4b5563", "W": "#e5e7eb"}
+    cw, gap, ch = 197, 14, 108
     out, defs = "", ""
-    for i, (title, tag, icon, fx) in enumerate(CARDS):
+    for i, (title, fx) in enumerate(CARDS):
         x = i * (cw + gap)
         d = i * 0.7
-        isz = 4
-        iw = len(icon[0]) * isz
-        g = pixels(icon, cols, isz)
+        g = ICONS[title]
         if fx == "bob":
-            anim = f'<animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="2.4s" begin="{d}s" repeatCount="indefinite"/>'
-            wrap = f'<g>{g}{anim}</g>'
+            wrap = f'<g>{g}<animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="2.4s" begin="{d}s" repeatCount="indefinite"/></g>'
         elif fx == "tilt":
-            wrap = (f'<g transform="translate({iw/2} 16)"><g transform="translate({-iw/2} -16)">{g}</g>'
-                    f'<animateTransform attributeName="transform" type="rotate" values="-6 {iw/2} 16;6 {iw/2} 16;-6 {iw/2} 16" dur="3s" begin="{d}s" additive="replace" repeatCount="indefinite"/></g>')
-            wrap = (f'<g>{g}<animateTransform attributeName="transform" type="rotate" values="-5 {iw/2} 16;5 {iw/2} 16;-5 {iw/2} 16" dur="3s" begin="{d}s" repeatCount="indefinite"/></g>')
+            wrap = f'<g>{g}<animateTransform attributeName="transform" type="rotate" values="-4 28 28;4 28 28;-4 28 28" dur="3s" begin="{d}s" repeatCount="indefinite"/></g>'
         else:
-            wrap = (f'<g>{g}<animateTransform attributeName="transform" type="translate" values="0 0;{-iw*.07:.1f} {-iw*.07:.1f};0 0" dur="1.6s" begin="{d}s" repeatCount="indefinite"/>'
-                    f'<animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="1.6s" begin="{d}s" additive="sum" repeatCount="indefinite"/></g>')
-        defs += (f'<clipPath id="k{i}"><rect x="0" y="0" width="{cw}" height="{ch}" rx="8"/></clipPath>')
+            wrap = f'<g>{g}<animateTransform attributeName="transform" type="scale" values="1;1.06;1" additive="sum" dur="1.8s" begin="{d}s" repeatCount="indefinite"/></g>'
+        defs += f'<clipPath id="k{i}"><rect x="0" y="0" width="{cw}" height="{ch}" rx="12"/></clipPath>'
         out += f"""
   <g transform="translate({x} 0)">
     <g clip-path="url(#k{i})">
       <rect width="{cw}" height="{ch}" fill="url(#cbg)"/>
       <rect width="{cw}" height="3" fill="url(#bar)"/>
-      <polygon points="0,0 36,0 18,{ch} -18,{ch}" fill="#fff" opacity="0.06">
-        <animateTransform attributeName="transform" type="translate" values="-60 0;{cw+80} 0;{cw+80} 0" keyTimes="0;.35;1" dur="5s" begin="{d}s" repeatCount="indefinite"/>
+      <polygon points="0,0 36,0 18,{ch} -18,{ch}" fill="#fff" opacity="0.05">
+        <animateTransform attributeName="transform" type="translate" values="-60 0;{cw+80} 0;{cw+80} 0" keyTimes="0;.35;1" dur="6s" begin="{d}s" repeatCount="indefinite"/>
       </polygon>
     </g>
-    <rect x=".5" y=".5" width="{cw-1}" height="{ch-1}" rx="8" fill="none" stroke="#2f2f3d"/>
-    <text x="{cw-16}" y="22" text-anchor="end" font-family="'Courier New',Menlo,monospace" font-size="11" fill="#4b5563">0{i+1}</text>
-    <g transform="translate(20 24)">{wrap}</g>
-    <text x="20" y="90" font-family="'Trebuchet MS','Segoe UI',Verdana,sans-serif" font-size="17" font-weight="800" letter-spacing="3" fill="#fff">{title}</text>
-    <rect x="20" y="96" width="0" height="2" fill="{RED}"><animate attributeName="width" values="0;40;40;0" keyTimes="0;.3;.8;1" dur="5s" begin="{d}s" repeatCount="indefinite"/></rect>
-    <text x="20" y="114" font-family="'Trebuchet MS','Segoe UI',Verdana,sans-serif" font-size="11.5" fill="#9ca3af" xml:space="preserve">{tag.replace("&", "&amp;")}</text>
+    <rect x=".5" y=".5" width="{cw-1}" height="{ch-1}" rx="12" fill="none" stroke="#2f2f3d"/>
+    <text x="{cw-16}" y="24" text-anchor="end" font-family="'Courier New',Menlo,monospace" font-size="11" fill="#4b5563">0{i+1}</text>
+    <g transform="translate(22 20) scale(.95)">{wrap}</g>
+    <text x="{cw-20}" y="{ch-22}" text-anchor="end" font-family="'Trebuchet MS','Segoe UI',Verdana,sans-serif" font-size="19" font-weight="800" letter-spacing="3" fill="#fff">{title}</text>
   </g>"""
     write("about-cards.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{ch}" viewBox="0 0 {W} {ch}">
   <defs>
@@ -557,10 +560,6 @@ if __name__ == "__main__":
     for n in SECTIONS:
         section(n)
     about_cards()
-    ai_panel()
-    divider_dots()
-    divider_pulse()
-    divider_blade()
     marquee("row1", ["py", "ts", "js", "swift", "html", "css", "bash", "nextjs", "astro", "react", "tailwind", "nodejs", "fastapi", "sqlite"], dur=44)
     marquee("row2", ["blender", "ps", "ai", "pr", "ae", "davinci", "docker", "n8n", "git", "github", "vercel", "vscode", "apple", "figma"], reverse=True, dur=40)
     print("ok")
