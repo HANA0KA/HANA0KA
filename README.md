@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="assets/avatar.gif" width="100%" alt="Pixel art avatar: a developer under a cherry tree at sunset" />
+<img src="assets/avatar-tokyo.gif" width="100%" alt="Pixel art avatar: a developer under a cherry tree at sunset" />
 
 </div>
 
