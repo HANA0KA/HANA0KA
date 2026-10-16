@@ -301,40 +301,47 @@ ICONS = {
 CARDS = [("APPS", "bob"), ("WEB", "tilt"), ("AI", "pulse"), ("DESIGN", "bob")]
 
 
-def about_cards():
-    cw, gap, ch = 197, 14, 108
-    out, defs = "", ""
+def about_panel():
+    ph = 214
+    F = "font-family=\"'Trebuchet MS','Segoe UI',Verdana,sans-serif\""
+    items = ""
+    cw = (W - 80) / 4
     for i, (title, fx) in enumerate(CARDS):
-        x = i * (cw + gap)
-        d = i * 0.7
+        cx = 40 + i * cw
+        d = i * 0.6
         g = ICONS[title]
-        if fx == "bob":
-            wrap = f'<g>{g}<animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="2.4s" begin="{d}s" repeatCount="indefinite"/></g>'
-        elif fx == "tilt":
-            wrap = f'<g>{g}<animateTransform attributeName="transform" type="rotate" values="-4 28 28;4 28 28;-4 28 28" dur="3s" begin="{d}s" repeatCount="indefinite"/></g>'
+        if fx == "tilt":
+            anim = f'<animateTransform attributeName="transform" type="rotate" values="-4 28 28;4 28 28;-4 28 28" dur="3s" begin="{d}s" repeatCount="indefinite"/>'
+        elif fx == "pulse":
+            anim = f'<animateTransform attributeName="transform" type="scale" values="1;1.06;1" additive="sum" dur="1.8s" begin="{d}s" repeatCount="indefinite"/>'
         else:
-            wrap = f'<g>{g}<animateTransform attributeName="transform" type="scale" values="1;1.06;1" additive="sum" dur="1.8s" begin="{d}s" repeatCount="indefinite"/></g>'
-        defs += f'<clipPath id="k{i}"><rect x="0" y="0" width="{cw}" height="{ch}" rx="12"/></clipPath>'
-        out += f"""
-  <g transform="translate({x} 0)">
-    <g clip-path="url(#k{i})">
-      <rect width="{cw}" height="{ch}" fill="url(#cbg)"/>
-      <rect width="{cw}" height="3" fill="url(#bar)"/>
-      <polygon points="0,0 36,0 18,{ch} -18,{ch}" fill="#fff" opacity="0.05">
-        <animateTransform attributeName="transform" type="translate" values="-60 0;{cw+80} 0;{cw+80} 0" keyTimes="0;.35;1" dur="6s" begin="{d}s" repeatCount="indefinite"/>
-      </polygon>
-    </g>
-    <rect x=".5" y=".5" width="{cw-1}" height="{ch-1}" rx="12" fill="none" stroke="#2f2f3d"/>
-    <text x="{cw-16}" y="24" text-anchor="end" font-family="'Courier New',Menlo,monospace" font-size="11" fill="#4b5563">0{i+1}</text>
-    <g transform="translate(22 20) scale(.95)">{wrap}</g>
-    <text x="{cw-20}" y="{ch-22}" text-anchor="end" font-family="'Trebuchet MS','Segoe UI',Verdana,sans-serif" font-size="19" font-weight="800" letter-spacing="3" fill="#fff">{title}</text>
-  </g>"""
-    write("about-cards.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{ch}" viewBox="0 0 {W} {ch}">
+            anim = f'<animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="2.4s" begin="{d}s" repeatCount="indefinite"/>'
+        sep = f'<line x1="{cx:.0f}" y1="136" x2="{cx:.0f}" y2="188" stroke="#2f2f3d"/>' if i else ""
+        items += f"""
+  {sep}
+  <g transform="translate({cx + 22:.0f} 136)"><g transform="scale(.82)"><g>{g}{anim}</g></g></g>
+  <text x="{cx + 78:.0f}" y="168" {F} font-size="16" font-weight="700" letter-spacing="3" fill="#f3f4f6">{title}</text>
+  <rect x="{cx + 78:.0f}" y="177" width="0" height="2" fill="{RED}"><animate attributeName="width" values="0;26;26;0" keyTimes="0;.25;.85;1" dur="6s" begin="{d}s" repeatCount="indefinite"/></rect>"""
+    hl = lambda t, c: f'<tspan fill="{c}" font-weight="700">{t}</tspan>'
+    write("about-panel.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{ph}" viewBox="0 0 {W} {ph}">
   <defs>
-    <linearGradient id="cbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d0d13"/><stop offset="1" stop-color="#1b1230"/></linearGradient>
-    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{RED}"/><stop offset="1" stop-color="{PURPLE}"/></linearGradient>
-    {defs}
-  </defs>{out}
+    <linearGradient id="pbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d0d13"/><stop offset="1" stop-color="#1b1230"/></linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{RED}"/><stop offset="1" stop-color="{PURPLE}"/></linearGradient>
+    <linearGradient id="hl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{RED}"/><stop offset="1" stop-color="{PURPLE}"/></linearGradient>
+    <clipPath id="pc"><rect width="{W}" height="{ph}" rx="12"/></clipPath>
+  </defs>
+  <g clip-path="url(#pc)">
+    <rect width="{W}" height="{ph}" fill="url(#pbg)"/>
+    <rect width="5" height="{ph}" fill="url(#bar)"/>
+    <polygon points="0,0 50,0 25,{ph} -25,{ph}" fill="#fff" opacity=".04"><animateTransform attributeName="transform" type="translate" values="-80 0;{W+100} 0;{W+100} 0" keyTimes="0;.4;1" dur="8s" repeatCount="indefinite"/></polygon>
+  </g>
+  <rect x=".5" y=".5" width="{W-1}" height="{ph-1}" rx="12" fill="none" stroke="#2f2f3d"/>
+  <text x="34" y="62" {F} font-size="64" font-weight="800" fill="{RED}" opacity=".35">&#8220;</text>
+  <text x="74" y="40" {F} font-size="19" fill="#d4d4dc" xml:space="preserve">I build {hl("apps", RED)}, {hl("websites", LILAC)} and {hl("AI-powered tools", RED)},</text>
+  <text x="74" y="66" {F} font-size="19" fill="#d4d4dc" xml:space="preserve">and I also edit video, model in 3D and design.</text>
+  <text x="74" y="98" {F} font-size="14.5" fill="#9ca3af" xml:space="preserve">I like to combine both worlds: software that generates and processes creative content.</text>
+  <rect x="74" y="108" width="0" height="2" rx="1" fill="url(#hl)"><animate attributeName="width" values="0;180;180;0" keyTimes="0;.3;.85;1" dur="6s" repeatCount="indefinite"/></rect>
+  <line x1="40" y1="122" x2="{W-40}" y2="122" stroke="#2f2f3d"/>{items}
 </svg>
 """)
 
@@ -562,7 +569,7 @@ if __name__ == "__main__":
     divider()
     for n in SECTIONS:
         section(n)
-    about_cards()
+    about_panel()
     marquee("row1", ["py", "ts", "js", "swift", "html", "css", "bash", "nextjs", "astro", "react", "tailwind", "nodejs", "fastapi", "sqlite"], dur=44)
     marquee("row2", ["blender", "ps", "ai", "pr", "ae", "davinci", "docker", "n8n", "git", "github", "vercel", "vscode", "apple", "figma"], reverse=True, dur=40)
     print("ok")

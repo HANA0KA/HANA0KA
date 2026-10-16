@@ -8,9 +8,7 @@
 
 <img src="assets/h-about.svg" width="100%" alt="About me" />
 
-I build **apps, websites and AI-powered tools**, and I also edit video, model in 3D and design. I like to combine both worlds: software that generates and processes creative content.
-
-<img src="assets/about-cards.svg" width="100%" alt="What I do: Apps (native macOS and iOS), Web (Next.js, Astro, React), AI (Whisper, ElevenLabs, Claude), Design (DaVinci, Blender, Adobe)" />
+<img src="assets/about-panel.svg" width="100%" alt="I build apps, websites and AI-powered tools, and I also edit video, model in 3D and design. I like to combine both worlds: software that generates and processes creative content. Apps, Web, AI, Design." />
 
 <img src="assets/h-stack.svg" width="100%" alt="Tech stack" />
 

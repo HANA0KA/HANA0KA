@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" height="214" viewBox="0 0 830 214">
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d0d13"/><stop offset="1" stop-color="#1b1230"/></linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e11d48"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+    <linearGradient id="hl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e11d48"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+    <clipPath id="pc"><rect width="830" height="214" rx="12"/></clipPath>
+  </defs>
+  <g clip-path="url(#pc)">
+    <rect width="830" height="214" fill="url(#pbg)"/>
+    <rect width="5" height="214" fill="url(#bar)"/>
+    <polygon points="0,0 50,0 25,214 -25,214" fill="#fff" opacity=".04"><animateTransform attributeName="transform" type="translate" values="-80 0;930 0;930 0" keyTimes="0;.4;1" dur="8s" repeatCount="indefinite"/></polygon>
+  </g>
+  <rect x=".5" y=".5" width="829" height="213" rx="12" fill="none" stroke="#2f2f3d"/>
+  <text x="34" y="62" font-family="'Trebuchet MS','Segoe UI',Verdana,sans-serif" font-size="64" font-weight="800" fill="#e11d48" opacity=".35">&#8220;</text>
+  <text x="74" y="40" font-family="'Trebuchet MS','Segoe UI',Verdana,sans-serif" font-size="19" fill="#d4d4dc" xml:space="preserve">I build <tspan fill="#e11d48" font-weight="700">apps</tspan>, <tspan fill="#a78bfa" font-weight="700">websites</tspan> and <tspan fill="#e11d48" font-weight="700">AI-powered tools</tspan>,</text>
+  <text x="74" y="66" font-family="'Trebuchet MS','Segoe UI',Verdana,sans-serif" font-size="19" fill="#d4d4dc" xml:space="preserve">and I also edit video, model in 3D and design.</text>
+  <text x="74" y="98" font-family="'Trebuchet MS','Segoe UI',Verdana,sans-serif" font-size="14.5" fill="#9ca3af" xml:space="preserve">I like to combine both worlds: software that generates and processes creative content.</text>
+  <rect x="74" y="108" width="0" height="2" rx="1" fill="url(#hl)"><animate attributeName="width" values="0;180;180;0" keyTimes="0;.3;.85;1" dur="6s" repeatCount="indefinite"/></rect>
+  <line x1="40" y1="122" x2="790" y2="122" stroke="#2f2f3d"/>
+  
+  <g transform="translate(62 136)"><g transform="scale(.82)"><g><rect x="16" y="4" width="24" height="48" rx="6" fill="none" stroke="#9ca3af" stroke-width="2.5"/>
+      <line x1="24" y1="10" x2="32" y2="10" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round"/>
+      <rect x="21" y="18" width="6" height="6" rx="2" fill="#e11d48"/><rect x="29" y="18" width="6" height="6" rx="2" fill="#a78bfa"/>
+      <rect x="21" y="27" width="6" height="6" rx="2" fill="#a78bfa"/><rect x="29" y="27" width="6" height="6" rx="2" fill="#9ca3af"/>
+      <line x1="24" y1="46" x2="32" y2="46" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="2.4s" begin="0.0s" repeatCount="indefinite"/></g></g></g>
+  <text x="118" y="168" font-family="'Trebuchet MS','Segoe UI',Verdana,sans-serif" font-size="16" font-weight="700" letter-spacing="3" fill="#f3f4f6">APPS</text>
+  <rect x="118" y="177" width="0" height="2" fill="#e11d48"><animate attributeName="width" values="0;26;26;0" keyTimes="0;.25;.85;1" dur="6s" begin="0.0s" repeatCount="indefinite"/></rect>
+  <line x1="228" y1="136" x2="228" y2="188" stroke="#2f2f3d"/>
+  <g transform="translate(250 136)"><g transform="scale(.82)"><g><rect x="3" y="9" width="50" height="38" rx="6" fill="none" stroke="#9ca3af" stroke-width="2.5"/>
+      <line x1="3" y1="20" x2="53" y2="20" stroke="#9ca3af" stroke-width="2.5"/>
+      <circle cx="10" cy="14.5" r="1.8" fill="#e11d48"/><circle cx="16" cy="14.5" r="1.8" fill="#a78bfa"/><circle cx="22" cy="14.5" r="1.8" fill="#9ca3af"/>
+      <polyline points="21,28 14,34 21,40" fill="none" stroke="#a78bfa" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="35,28 42,34 35,40" fill="none" stroke="#a78bfa" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="31" y1="27" x2="25" y2="41" stroke="#e11d48" stroke-width="2.8" stroke-linecap="round"/><animateTransform attributeName="transform" type="rotate" values="-4 28 28;4 28 28;-4 28 28" dur="3s" begin="0.6s" repeatCount="indefinite"/></g></g></g>
+  <text x="306" y="168" font-family="'Trebuchet MS','Segoe UI',Verdana,sans-serif" font-size="16" font-weight="700" letter-spacing="3" fill="#f3f4f6">WEB</text>
+  <rect x="306" y="177" width="0" height="2" fill="#e11d48"><animate attributeName="width" values="0;26;26;0" keyTimes="0;.25;.85;1" dur="6s" begin="0.6s" repeatCount="indefinite"/></rect>
+  <line x1="415" y1="136" x2="415" y2="188" stroke="#2f2f3d"/>
+  <g transform="translate(437 136)"><g transform="scale(.82)"><g><path d="M28 4 C29.5 18 34 22.5 48 24 C34 25.5 29.5 30 28 44 C26.5 30 22 25.5 8 24 C22 22.5 26.5 18 28 4Z" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M44 34 C44.7 40 46.5 41.8 52 42.5 C46.5 43.2 44.7 45 44 51 C43.3 45 41.5 43.2 36 42.5 C41.5 41.8 43.3 40 44 34Z" fill="#e11d48"/>
+      <circle cx="12" cy="44" r="2.6" fill="#9ca3af"/><animateTransform attributeName="transform" type="scale" values="1;1.06;1" additive="sum" dur="1.8s" begin="1.2s" repeatCount="indefinite"/></g></g></g>
+  <text x="493" y="168" font-family="'Trebuchet MS','Segoe UI',Verdana,sans-serif" font-size="16" font-weight="700" letter-spacing="3" fill="#f3f4f6">AI</text>
+  <rect x="493" y="177" width="0" height="2" fill="#e11d48"><animate attributeName="width" values="0;26;26;0" keyTimes="0;.25;.85;1" dur="6s" begin="1.2s" repeatCount="indefinite"/></rect>
+  <line x1="602" y1="136" x2="602" y2="188" stroke="#2f2f3d"/>
+  <g transform="translate(624 136)"><g transform="scale(.82)"><g><path d="M28 3 L43 27 C43 36 36 41 28 53 C20 41 13 36 13 27 Z" fill="none" stroke="#a78bfa" stroke-width="2.6" stroke-linejoin="round"/>
+      <line x1="28" y1="28" x2="28" y2="53" stroke="#a78bfa" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="28" cy="25" r="4" fill="#e11d48"/>
+      <path d="M17 31 C22 33 25 33 28 28 C31 33 34 33 39 31" fill="none" stroke="#9ca3af" stroke-width="1.8" stroke-linecap="round"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="2.4s" begin="1.7999999999999998s" repeatCount="indefinite"/></g></g></g>
+  <text x="680" y="168" font-family="'Trebuchet MS','Segoe UI',Verdana,sans-serif" font-size="16" font-weight="700" letter-spacing="3" fill="#f3f4f6">DESIGN</text>
+  <rect x="680" y="177" width="0" height="2" fill="#e11d48"><animate attributeName="width" values="0;26;26;0" keyTimes="0;.25;.85;1" dur="6s" begin="1.7999999999999998s" repeatCount="indefinite"/></rect>
+</svg>
