@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="assets/avatar-tokyo-v2.gif" width="100%" alt="Pixel art avatar: a developer under a cherry tree at sunset" />
+<img src="assets/avatar-tokyo-v3.gif" width="100%" alt="Pixel art avatar: a developer under a cherry tree at sunset" />
 
 </div>
 
@@ -35,6 +35,6 @@
 
 <div align="center">
 
-<img src="assets/duel-tokyo-night-v3.gif" width="100%" alt="Pixel art: Evangelion Unit-01 and Strike Gundam facing off in Tokyo at night, Mount Fuji under a full moon" />
+<img src="assets/duel-tokyo-night-v4.gif" width="100%" alt="Pixel art: Evangelion Unit-01 and Strike Gundam facing off in Tokyo at night, Mount Fuji under a full moon" />
 
 </div>
