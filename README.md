@@ -6,11 +6,11 @@
 
 </div>
 
-<img src="assets/h-about.svg" width="100%" alt="About me" />
+<img src="assets/h-about-v2.svg" width="100%" alt="About me" />
 
 <img src="assets/about-panel-v3.svg" width="100%" alt="I build apps, websites and AI-powered tools, and I also edit video, model in 3D and design. I like to combine both worlds: software that generates and processes creative content. Apps, Web, AI, Design." />
 
-<img src="assets/h-stack.svg" width="100%" alt="Tech stack" />
+<img src="assets/h-stack-v2.svg" width="100%" alt="Tech stack" />
 
 <!-- TODO: confirm the real list and remove anything you don't use daily -->
 
@@ -21,7 +21,7 @@
 
 </div>
 
-<img src="assets/h-stats.svg" width="100%" alt="GitHub stats" />
+<img src="assets/h-stats-v2.svg" width="100%" alt="GitHub stats" />
 
 <div align="center">
 
