@@ -51,6 +51,6 @@ I build **apps, websites and AI-powered tools**, and I also edit video, model in
 
 <div align="center">
 
-<img src="assets/duel-tokyo-night.gif" width="100%" alt="Pixel art: Evangelion Unit-01 and Strike Gundam facing off in Tokyo at night, Mount Fuji under a full moon" />
+<img src="assets/duel-tokyo-night-v2.gif" width="100%" alt="Pixel art: Evangelion Unit-01 and Strike Gundam facing off in Tokyo at night, Mount Fuji under a full moon" />
 
 </div>
