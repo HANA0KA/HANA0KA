@@ -35,6 +35,6 @@
 
 <div align="center">
 
-<img src="assets/duel-tokyo-night-v6.gif" width="100%" alt="Pixel art: Evangelion Unit-01 and Strike Gundam facing off in Tokyo at night, Mount Fuji under a full moon" />
+<img src="assets/duel-tokyo-night-v7.gif" width="100%" alt="Pixel art: Evangelion Unit-01 and Strike Gundam clashing blades in Tokyo at night, Mount Fuji under a full moon" />
 
 </div>
