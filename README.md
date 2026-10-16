@@ -48,3 +48,9 @@ I build **apps, websites and AI-powered tools**, and I also edit video, model in
 <img src="https://capsule-render.vercel.app/api?type=waving&height=110&color=0:0a0a0f,50:7c3aed,100:e11d48&section=footer&animation=twinkling" width="100%" alt="" />
 
 </div>
+
+<div align="center">
+
+<img src="assets/duel-tokyo-night.gif" width="100%" alt="Pixel art: Evangelion Unit-01 and Strike Gundam facing off in Tokyo at night, Mount Fuji under a full moon" />
+
+</div>
